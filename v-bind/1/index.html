@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V bind #1</title>
+
+	<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<!-- production-версия, оптимизированная для размера и скорости
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+</head>
+<body>
+	<div id="app">
+		<span v-bind:title="message">
+			Hover here! 
+		</span>
+	</div>
+
+	<script src="index.js"></script>
+</body>
+</html>

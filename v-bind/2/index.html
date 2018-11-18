@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V bind #1</title>
+
+	<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<!-- production-версия, оптимизированная для размера и скорости
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<style>
+		.static {
+			padding: 5px;
+		}
+		.text-danger {
+			border: 2px solid red;
+		} 
+		.active {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div id="example1">
+		<div class="static"
+		     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+		Проверь класс элемента (классы через создание объекта инлайн)
+		</div>
+		<div class="static"
+		     v-bind:class="classObject">
+		Проверь класс элемента (классы через переменную с объектом)
+		</div>
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div id="example2">
+		<div class="static"
+		     v-bind:class="classObject">
+		Проверь класс элемента (классы через computed)
+		</div>
+	</div>
+
+	<script src="index.js"></script>
+</body>
+</html>

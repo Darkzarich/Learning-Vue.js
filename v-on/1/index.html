@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V bind #1</title>
+
+	<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<!-- production-версия, оптимизированная для размера и скорости
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+</head>
+<body>
+	<div id="app">
+		<span>{{message}}</span><br>
+		<button v-on:click="reverseMessage">Revert</button>
+		<div style="padding: 5px;">
+			<button @mouseover="reverseMessage" @mouseleave="reverseMessage">Revert with hover</button>
+		</div>
+	</div>
+
+	<script src="index.js"></script>
+</body>
+</html>

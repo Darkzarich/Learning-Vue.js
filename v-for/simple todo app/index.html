@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>V bind #1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<!-- production-версия, оптимизированная для размера и скорости
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	
+	<style>
+		.list-group-item {
+			display: list-item;
+		}
+	</style>
+</head>
+<body class="bg-dark">
+	<div class="container">
+		<div id="app" class="row justify-content-center">
+			<div class="col-12 col-md-6">
+				<ol class="list-group">
+					<form v-on:submit.prevent="addNewTodo">
+						<div class="form-group text-center">
+							<label for="new-todo" class="text-light">Add new task </label>
+							<input id="new-todo" 
+									   placeholder= "For example: do homework"
+									   v-model= "newTodoText"
+									   class="mt-2 form-control-sm ">
+							<button v-bind:disabled="newTodoText == ''" class="btn btn-primary">Add</button>
+						</div>
+					</form>
+					<li
+						is="todo-item" 
+						v-for="(todo, index) in todos"
+						v-bind:key="todo.id"
+						v-bind:title="todo.title"
+						v-bind:id="todo.id"
+						v-on:remove="todos.splice(index, 1)"
+						class="m-2 p-2 list-group-item text-light bg-secondary rounded">
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>
